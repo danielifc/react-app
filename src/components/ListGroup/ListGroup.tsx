@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from './ListGroup.css';
-import styled from 'styled-components';
+import styles from "./ListGroup.css";
+import styled from "styled-components";
 
 const List = styled.ul`
   list-style: none;
@@ -14,7 +14,7 @@ interface ListItemProps {
 //aqui define que ListItemProps representa la forma de las propiedades del componente ListItem
 const ListItem = styled.li<ListItemProps>`
   padding: 5 px 0;
-  background: ${ props => props.active ? 'blue' : 'none' }
+  background: ${(props) => (props.active ? "blue" : "none")};
 `;
 
 // {items: [], heading: string}
@@ -39,11 +39,13 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No items found</p>}
-      <ul className="list-group">
+      <ul className="list-group" style={{ backgroundColor: "yellow" }}>
         {items.map((item, index) => (
           <li
             className={
-              selectedIndex === index ? "list-group-item active" : "list-group-item"
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
             }
             key={item}
             onClick={() => {
