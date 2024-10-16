@@ -14,7 +14,7 @@ function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
 
   return (
-    <BsFillCalendarFill color="red" size="60" />
+    // <BsFillCalendarFill color="red" size="60" />
 
     // <div>
     //   <ListGroup
@@ -32,6 +32,13 @@ function App() {
     //     Submit
     //   </Button>
     // </div>
+
+    //Exercise using css modules
+    <div>
+      <Button color="primary" onClick={() => {}}>
+        My Button
+      </Button>
+    </div>
   );
 }
 
