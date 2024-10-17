@@ -7,12 +7,31 @@ import "./App.css";
 import Like from "./components/Like";
 
 function App() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
+  // let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  // const handleSelectItem = (item: string) => {
+  //   console.log(item);
+  // };
 
-  const [alertVisible, setAlertVisibility] = useState(false);
+  // const [alertVisible, setAlertVisibility] = useState(false);
+
+  const [drink, setDrink] = useState({
+    title: "Americano",
+    price: 5,
+  });
+
+  const handleClick = () => {
+    //This code doesn't work as we are not treating the array as immutable:
+    // drink.price = 6;
+    // setDrink(drink);
+
+    // const newDrink = {
+    //   title: "Americano",
+    //   price: 6,
+    // };
+
+    //Using spread operator, instead of creating a new object like we did above
+    setDrink({ ...drink, price: 6 });
+  };
 
   return (
     // <BsFillCalendarFill color="red" size="60" />
@@ -42,9 +61,14 @@ function App() {
     // </div>
 
     //Exercise: Building a Like component
-    <>
-      <Like size="60" onLike={() => console.log("Clicked")} />
-    </>
+    // <>
+    //   <Like size="60" onLike={() => console.log("Clicked")} />
+    // </>
+
+    <div>
+      {drink.price}
+      <button onClick={handleClick}>Click Me</button>
+    </div>
   );
 }
 
