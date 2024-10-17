@@ -1,10 +1,5 @@
 import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import ListGroup from "./components/ListGroup";
-import { BsFillCalendarFill } from "react-icons/bs";
 import "./App.css";
-import Like from "./components/Like";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -14,23 +9,38 @@ function App() {
 
   // const [alertVisible, setAlertVisibility] = useState(false);
 
-  const [drink, setDrink] = useState({
-    title: "Americano",
-    price: 5,
+  // const [drink, setDrink] = useState({
+  //   title: "Americano",
+  //   price: 5,
+  // });
+
+  // const handleClick = () => {
+  //   //This code doesn't work as we are not treating the array as immutable:
+  //   // drink.price = 6;
+  //   // setDrink(drink);
+
+  //   // const newDrink = {
+  //   //   title: "Americano",
+  //   //   price: 6,
+  //   // };
+
+  //   //Using spread operator, instead of creating a new object like we did above
+  //   setDrink({ ...drink, price: 6 });
+  // };
+
+  const [customer, setCustomer] = useState({
+    name: "John",
+    address: {
+      city: "San Francisco",
+      zipCode: 94111,
+    },
   });
 
   const handleClick = () => {
-    //This code doesn't work as we are not treating the array as immutable:
-    // drink.price = 6;
-    // setDrink(drink);
-
-    // const newDrink = {
-    //   title: "Americano",
-    //   price: 6,
-    // };
-
-    //Using spread operator, instead of creating a new object like we did above
-    setDrink({ ...drink, price: 6 });
+    setCustomer({
+      ...customer,
+      address: { ...customer.address, zipCode: 98765 },
+    });
   };
 
   return (
@@ -65,8 +75,13 @@ function App() {
     //   <Like size="60" onLike={() => console.log("Clicked")} />
     // </>
 
+    // <div>
+    //   {drink.price}
+    //   <button onClick={handleClick}>Click Me</button>
+    // </div>
+
     <div>
-      {drink.price}
+      {customer.address.zipCode}
       <button onClick={handleClick}>Click Me</button>
     </div>
   );
