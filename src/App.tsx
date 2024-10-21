@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import UpdatingArrays from "./components/01-ManagingState/UpdatingArrays";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -28,20 +29,20 @@ function App() {
   //   setDrink({ ...drink, price: 6 });
   // };
 
-  const [customer, setCustomer] = useState({
-    name: "John",
-    address: {
-      city: "San Francisco",
-      zipCode: 94111,
-    },
-  });
+  // const [customer, setCustomer] = useState({
+  //   name: "John",
+  //   address: {
+  //     city: "San Francisco",
+  //     zipCode: 94111,
+  //   },
+  // });
 
-  const handleClick = () => {
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 98765 },
-    });
-  };
+  // const handleClick = () => {
+  //   setCustomer({
+  //     ...customer,
+  //     address: { ...customer.address, zipCode: 98765 },
+  //   });
+  // };
 
   return (
     // <BsFillCalendarFill color="red" size="60" />
@@ -80,10 +81,12 @@ function App() {
     //   <button onClick={handleClick}>Click Me</button>
     // </div>
 
-    <div>
-      {customer.address.zipCode}
-      <button onClick={handleClick}>Click Me</button>
-    </div>
+    // <div>
+    //   {customer.address.zipCode}
+    //   <button onClick={handleClick}>Click Me</button>
+    // </div>
+
+    <UpdatingArrays />
   );
 }
 
