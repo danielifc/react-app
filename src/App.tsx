@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import UpdatingArrays from "./components/01-ManagingState/UpdatingArrays";
+import UpdatingArrayOfObjects from "./components/01-ManagingState/UpdatingArrayOfObjects";
 
 function App() {
   // let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -86,7 +87,9 @@ function App() {
     //   <button onClick={handleClick}>Click Me</button>
     // </div>
 
-    <UpdatingArrays />
+    // <UpdatingArrays />
+
+    <UpdatingArrayOfObjects />
   );
 }
 
